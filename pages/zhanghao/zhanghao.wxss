@@ -1,0 +1,77 @@
+.cont {
+}
+
+.cont .col-h:nth-child(3) {
+  border-bottom: none;
+}
+
+.col-h {
+  margin: 0 32rpx;
+  padding: 20rpx 0;
+  height: 90rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.col-h-tel {
+  padding: 0 32rpx;
+  height: 90rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 18rpx solid #f8f8f8;
+  border-left: none;
+  border-right: none;
+}
+
+.sq-tit {
+  font-size: 25rpx;
+  color: #000;
+}
+
+.sq-tx image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+}
+
+.sq-tx input {
+  width: 200rpx;
+  font-size: 25rpx;
+}
+
+.nowaddress {
+  padding: 0 32rpx;
+  border: 18rpx solid #f8f8f8;
+  border-left: none;
+  border-right: none;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.zhjj {
+  padding: 0 32rpx;
+}
+
+.zhjj view {
+  padding: 40rpx 0;
+  font-size: 25rpx;
+}
+
+.zhjj textarea {
+  font-size: 25rpx;
+}
+.tijiao{
+  width: 80%;
+  margin:100rpx auto;
+  border-radius: 50rpx;
+  background-color: #e60012;
+  color: white;
+}
+button::after {
+  border: none
+}

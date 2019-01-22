@@ -1,0 +1,133 @@
+.imgBox{
+  width: 100%;
+  position: relative;
+}
+.imgBox image{
+  display: block;
+  width: 100%;
+}
+.jingxuanspBox{
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  background-color: #ffffff;
+}
+.jxshipin{
+  width: 100%;
+  position: relative;
+}
+
+.jxshipin image{
+  display: block;
+  width: 100%;
+}
+.bfan{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -45rpx;
+  margin-left: -45rpx;
+}
+.bfan image{
+  width: 90rpx;
+  height: 90rpx;
+}
+.jingxuanTit{
+  font-size: 36rpx;
+  color: #000000;
+  height: 120rpx;
+  line-height: 120rpx;
+  padding: 0 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.faburen{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40rpx;
+}
+.fabuimg{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 48%;
+  overflow: hidden;
+
+}
+.fabuimg image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+}
+
+.fbid{
+  font-size: 26rpx;
+}
+.fbid,.fbsj{
+  display: block;
+  font-size: 24rpx;
+  color: #000000;
+}
+.fbsj{
+  color: #9d9d9d;
+}
+.fbinfo{
+  float: left;
+  margin-left: 10rpx;
+}
+
+.frenBox,.fbuImg{
+  padding: 0 32rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fbuImg{
+  padding: 0;
+}
+.fbuImg image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+}
+.fbuname{
+  margin-left: 20rpx;
+  align-items: center;
+}
+.fbuname view:nth-child(1){
+  font-size: 24rpx;
+  color: #000000;
+}
+.fbuname view:nth-child(2){
+  font-size: 24rpx;
+  color: #aeaeae;
+}
+.gzo view{
+  background-color: #e60012;
+  border-radius: 12rpx;
+  color: white;
+  padding: 10rpx 20rpx;
+  font-size: 24rpx;
+}
+.jh{
+  margin: 20rpx 32rpx;
+  padding:0 40rpx;
+  padding-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e6e6e6;
+}
+.jh view{
+  text-align: center;
+  font-size: 20rpx;
+  color: #9d9d9d;
+}
+.jh view image{
+  width: 40rpx;
+  height: 40rpx;
+  margin:auto;
+  margin-bottom: 10rpx;
+  display: block;
+}

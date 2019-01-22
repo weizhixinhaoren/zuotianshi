@@ -1,0 +1,44 @@
+.list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 32rpx;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.touxiang image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+}
+
+.content {
+  width: 400rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.content view:nth-child(1) {
+  font-size: 28rpx;
+  color: #000;
+}
+
+.content view:nth-child(2) {
+  font-size: 24rpx;
+  color: #a5a5a5;
+}
+
+.quxiao {
+  width: 120rpx;
+  height: 48rpx;
+  border-radius: 12rpx;
+  border: 1px solid #e60012;
+  font-size: 24rpx;
+  color: #e60012;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

@@ -1,0 +1,8 @@
+<view class='boxComBox'>
+  <form>
+    <textarea placeholder='发表您的评论'  bindinput='bindblur' maxlength="80" value='{{input_value}}'> </textarea>
+    <button class='tj'  bindtap='btn_send'>
+        提交
+    </button>
+  </form>
+</view>

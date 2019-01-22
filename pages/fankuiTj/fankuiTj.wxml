@@ -1,0 +1,81 @@
+<view>
+  <form catchsubmit="formSubmit">
+    <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">错误提示</view>
+    <view class='title'>
+      <input type='text' name='title' value='{{textname}}' disabled placeholder=' {{textname}}'></input>
+    </view>
+    <view class="weui-cells weui-cells_after-title textarea-box">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <textarea class="weui-textarea" placeholder="请填写10个字以上的问题描述以便我们提供更好的帮助" style="height: 3.8em" bindinput='textlength' name='textCont' />
+          <view class="weui-textarea-counter">{{textlength}}/1000</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="page__bd jietu">
+      <view class="weui-cells1">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <view class="weui-uploader">
+              <view class="weui-uploader__hd">
+                <view class="weui-uploader__title ">相关截图 （选填）</view>
+                <view class="weui-uploader__info">{{files.length}}</view>
+              </view>
+              <view class="weui-uploader__bd">
+
+                <block wx:for="{{files}}" wx:key="*this">
+                  <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                    <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                  </view>
+                </block>
+                <view class="weui-uploader__files" id="uploaderFiles" style='display:inline-block'>
+                </view>
+                <view class="weui-uploader__input-box">
+                  <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 输入有效联系方式以便开发者联系你 （选填） -->
+    <view class='lxfs'>
+      输入有效联系方式以便开发者联系你 （选填）
+    </view>
+
+    <view class='phone-lx'>
+      <view class='phone-name'>
+        联系方式
+      </view>
+      <view class='phone-number'>
+        <input type='text' name='tel' placeholder='邮箱/手机号'></input>
+      </view>
+    </view>
+
+
+    <checkbox-group bindchange="bindAgreeChange">
+      <label class="weui-agree" for="weuiAgree">
+        <view class="weui-agree__text">
+          <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+          <view class="weui-agree__checkbox-icon">
+            <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+          </view>
+          允许开发者使用当前小程序日志作为修复问题的根据。
+          <!-- <navigator url="" class=""></navigator> -->
+          <view class='weui-agree__link'> 《相关条款》</view>
+        </view>
+      </label>
+    </checkbox-group>
+
+
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="warn" formType="submit">提交</button>
+    </view>
+
+
+  </form>
+
+</view>

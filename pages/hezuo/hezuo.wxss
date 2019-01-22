@@ -1,0 +1,78 @@
+page{
+  background-color: #fafafc;
+}
+.form-box{
+  padding: 0 32rpx;
+}
+.title{
+  font-size: 28rpx;
+  color: #212121;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.first01{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+
+}
+input{
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.first01 input{
+  width: 48%;
+  background-color: white;
+  padding-left: 10rpx;
+  font-size: 26rpx;
+  color: #212121;
+  border:1px solid #f3f3f3;
+  box-sizing: border-box;
+}
+.first02{
+  width:100%;
+  background-color: white;
+  padding-left: 10rpx;
+  font-size: 26rpx;
+  color: #212121;
+  border:1px solid #f3f3f3;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+}
+.first02 textarea{
+  padding-top: 20rpx;
+}
+.kth{
+  margin-top: 100rpx;
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+.kth text{
+  color:#e60012;
+}
+.submit{
+  margin-top: 150rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 460rpx;
+  border-radius: 100rpx;
+  background-color: #eeeef0;
+  color: #aeaeae;
+
+}
+.submit1{
+  margin-top: 150rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 460rpx;
+  border-radius: 100rpx;
+  background-color: #e60012;
+  color: white;
+
+}
+button::after{ border: none; }
+.sexBox{
+  margin-bottom: 20rpx;
+}

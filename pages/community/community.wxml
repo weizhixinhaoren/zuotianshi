@@ -1,0 +1,197 @@
+<view class="weui-navbar">
+  <block wx:for="{{tabs}}" wx:key="*this">
+    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+      <view class="weui-navbar__title">{{item}}</view>
+    </view>
+  </block>
+  <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);">
+  </view>
+</view>
+
+
+<view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+  <!-- 标题 -->
+  <view class='tab-title'>
+    <view>
+      我关注的账号
+    </view>
+    <view>
+      <!-- 更多推荐 -->
+    </view>
+  </view>
+  <!-- 申请账号 -->
+  <view class="sqzh">
+    <view bindtap='searchuser'>
+      <image src='../../images/sq.png' mode='aspectFit'></image>
+      <text>搜索用户</text>
+    </view>
+    <view>
+      <!-- 关注的账号-->
+      <block wx:if='{{uesrGzInfo=="没有关注过"}}'>
+          <view class='gzzh'>
+            <image src='../../images/y.png' mode='aspectFit'></image>
+            <text>暂无关注用户</text>
+          </view>
+      </block>
+      <block wx:else>
+        <view class='gzzh' wx:for="{{uesrGzInfo}}" wx:key='{{index}}'>
+          <image src='{{item.img_url}}' mode='aspectFit'></image>
+          <text>{{item.name}}</text>
+        </view>
+      </block>
+
+    </view>
+  </view>
+
+  <!-- 关注的账号发布的信息 -->
+  <view class='gz-fabu-info gz-fabu-info-gz'>
+    <view class='gz-fabu-info-box' wx:for="{{infoList}}" wx:key="{{index}}">
+      <!-- 账号的头像 -->
+      <view class='info-img'>
+        <image src='{{item.sp_info.user_info.img_url}}'></image>
+        <view class='name_info'>
+          <text>{{item.sp_info.user_info.name}}</text>
+          <text>{{item.sp_info.inputtime}}</text>
+        </view>
+      </view>
+      <!-- 发布的信息 -->
+      <view class='content-info'>
+        <view class='biaoti'>
+          {{item.sp_info.content}}
+        </view>
+        <!-- <image src='{{item.img}}' class='image-co'></image> -->
+        <block wx:if="{{item.sp_info.stu == 2}}" wx:for='{{item.sp_info.url}}' wx:key='{{index}}' wx:for-item="list">
+
+          <!-- <image src='{{list.src}}' class='image-co' bindtap='previewImg'></image> -->
+          <image src='{{list.src}}' class='image-co'  bindtap='previewImg0' data-list="{{item.sp_info.url1}}" data-src="{{list.src}}" wx:for-item="list.src" data-id='{{index}}'></image>
+        </block>
+
+        <block wx:if="{{item.sp_info.stu == 1}}">
+          <video src='{{item.sp_info.url[0].src}}' class='videoBoxwid'></video>
+        </block>
+        <!-- 浏览量 点赞 评论 转发 -->
+        <view class='llcs'>
+          <view class='liulanliang'>
+            浏览量：{{item.sp_info.num}}
+          </view>
+          <view class='zfdzpl'>
+            <image src='../../images/zan-h.png' wx:if="{{item.stu.dz==1}}" data-index='{{index}}' bindtap='zanUp' id='{{item.sp_info.id}}'></image>
+            <image src='../../images/zan.png' wx:else bindtap='zanUp' data-index='{{index}}' id='{{item.sp_info.id}}'></image>
+            <!-- 评论 -->
+            <!-- 评论模板 commentB -->
+            <block>
+              <image src='../../images/pl.png' bindtap='plcont' id='{{item.sp_info.id}}'></image>
+            </block>
+            <!-- 转发 -->
+
+            <image src='../../images/zf.png' bindtap='fenxiang' id='{{item.sp_info.id}}'></image>
+          </view>
+        </view>
+        <!-- 多少人看过 -->
+        <view class='eyes'>
+          <view>
+            <image src='../../images/l.png'></image>
+            有{{item.sp_info.num}}人看过
+          </view>
+          <view>
+            <image src='../../images/jt.png'></image>
+          </view>
+        </view>
+        <!-- 评论list -->
+        <view class='plList' wx:if='{{item.comment.length>0}}'>
+          <view wx:for='{{item.comment}}' wx:key='{{index}}' wx:for-item='list'>
+           <block wx:if='{{list.user_name == null}}'>游客</block>
+           <block wx:else> {{list.user_name}}</block>：{{list.content}}
+          </view>
+        </view>
+      </view>
+
+
+    </view>
+  </view>
+  <view class="weui-loadmore weui-loadmore_line">
+    <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+  </view>
+  <!-- 关注的账号发布的信息结束 -->
+</view>
+<view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+  <!-- 关注的账号发布的信息 -->
+  <view class='gz-fabu-info gz-fabu-info-gc'>
+    <view class='gz-fabu-info-box' wx:for="{{guanginfoList}}" wx:key='{{index}}'>
+      <!-- 账号的头像 -->
+      <view class='info-img'>
+        <image src='{{item.sp_info.user_info.img_url}}'></image>
+        <view class='name_info'>
+          <text>{{item.sp_info.user_info.name}}</text>
+          <text>{{item.sp_info.inputtime}}</text>
+        </view>
+      </view>
+      <!-- 发布的信息 -->
+      <view class='content-info'>
+        <view class='biaoti'>
+          {{item.sp_info.content}}
+        </view>
+        <block wx:if="{{item.sp_info.stu == 2}}" wx:for='{{item.sp_info.url}}' wx:key='{{index}}' wx:for-item="list">
+
+          <image src='{{list.src}}' class='image-co'  bindtap='previewImg' data-list="{{item.sp_info.url1}}" data-src="{{list.src}}" wx:for-item="list.src" data-id='{{index}}'></image>
+        </block>
+
+        <block wx:if="{{item.sp_info.stu == 1}}">
+          <video src='{{item.sp_info.url[0].src}}' class='videoBoxwid'></video>
+        </block>
+
+        <!-- 浏览量 点赞 评论 转发 -->
+        <view class='llcs'>
+          <view class='liulanliang'>
+            浏览量：{{item.sp_info.num}}
+          </view>
+          <view class='zfdzpl'>
+            <!-- 点赞 -->
+            <!-- <image src='../../images/zan.png' ></image> -->
+            <image src='../../images/zan-h.png' wx:if="{{item.stu.dz==1}}" bindtap='zanUp1' data-index='{{index}}' id='{{item.sp_info.id}}'></image>
+            <image src='../../images/zan.png' wx:else bindtap='zanUp1' data-index='{{index}}' id='{{item.sp_info.id}}'></image>
+            <!-- 评论 -->
+            <!-- 评论模板 commentB -->
+            <block>
+              <image src='../../images/pl.png' bindtap='plcont' id='{{item.sp_info.id}}'></image>
+            </block>
+            <!-- 转发 -->
+
+            <image src='../../images/zf.png' bindtap='fenxiang' id='{{item.sp_info.id}}'></image>
+          </view>
+        </view>
+        <!-- 多少人看过 -->
+        <view class='eyes'>
+          <view>
+            <image src='../../images/l.png'></image>
+            有{{item.sp_info.num}}人看过
+          </view>
+          <view>
+            <image src='../../images/jt.png'></image>
+          </view>
+        </view>
+        <!-- 评论list -->
+        <view class='plList' wx:if='{{item.comment.length>0}}'>
+          <view wx:for='{{item.comment}}' wx:key='{{index}}' wx:for-item='list'>
+            {{list.user_name}}：{{list.content}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 关注的账号发布的信息结束 -->
+  <view class="weui-loadmore weui-loadmore_line">
+    <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+  </view>
+</view>
+
+
+<!-- 评论发送 -->
+<form bindsubmit="formSubmit" bindreset="formReset">
+<view class='communityBox' wx:if='{{hiddenPl}}'>
+
+  <input type='text' placeholder='请输入评论内容' focus name='content' bindblur='blur'></input>
+  <!-- <button class='btn_fs' bindtap='fs_contCom' data-id='{{plk_id}}'>发送</button> -->
+  <button form-type="submit" class='btn_fs' data-id='{{plk_id}}'>发送</button>
+</view>
+</form>

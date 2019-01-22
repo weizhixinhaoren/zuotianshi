@@ -1,0 +1,7 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class='baner'>
+  <image src='{{content.img_url}}' mode='widthFix'></image>
+</view>
+<view class='contentBox'>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+</view>

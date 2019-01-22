@@ -1,0 +1,82 @@
+<view class='detailBox'>
+  <view class='videoBox'>
+    <video src='{{content.video_url}}' autoplay='{{autoplay}}'></video>
+  </view>
+
+  <!-- 标题 -->
+  <view class='title'>
+    <view class='tit'>
+      {{content.title}}
+    </view>
+    <view class='tab-jj' catchtap='tabHs'>
+      简介
+      <image src='{{jjImgH}}' wx:if='{{hidden==false}}'></image>
+      <image src='{{jjImg}}' wx:else></image>
+    </view>
+  </view>
+
+  <!-- 简介 -->
+  <view class='content-box {{hidden == false?"hi-hidden":"sh-show"}}'>
+    <view class='time'>
+      <image src='../../images/gx.png'></image>
+      {{content.inputtime}} 更新
+    </view>
+    <view class='j-con'>
+      {{content.content}}
+    </view>
+    <view class='jh'>
+      <view bindtap='update_zan' data-mid='{{index}}' id='{{content.id}}'>
+        <image src='../../images/zan-h.png'  wx:if="{{content.stu.dz==1}}"></image>
+        <image src='../../images/zan.png'  wx:else></image>
+        <view>点赞</view>
+      </view>
+      <view bindtap='inshouc' id='{{content.id}}'>
+        <block wx:if='{{content.stu.sc == 1}}'>
+           <image src='../../images/shou-h.png'></image>
+        </block>
+        <block wx:if='{{content.stu.sc == 0}}'>
+           <image src='../../images/shou.png'></image>
+        </block>
+        <view>收藏</view>
+      </view>
+      <view catchtap='navTo' data-id='{{content.id}}'>
+        <image src='../../images/pl.png'></image>
+        评论
+      </view>
+      <view catchtap='fenxiang' id='{{content.id}}'>
+        <image src='../../images/zf.png'></image>
+        分享
+      </view>
+    </view>
+    <!-- 发表评论 -->
+
+  </view>
+  <!-- 评论 -->
+  <view class='comment' >
+    <view class='commentBox'>
+      <view class='commentImg'>
+        <image src='{{userImg}}'></image>
+      </view>
+      <view class='commentInp'>
+        <input type='text'  catchtap='navTo' data-id='{{content.id}}' disabled></input>
+      </view>
+    </view>
+  </view>
+
+  <view class='commentList' wx:for='{{comment}}' wx:key="{{index}}">
+    <view class='info-img'>
+      <image src='{{item.users_info.img_url}}'></image>
+      <view class='name_info'>
+        <text>{{item.users_info.name}}</text>
+        <text>{{item.inputtime}}</text>
+      </view>
+    </view>
+    <view class='commentCon'>
+      {{item.content}}
+    </view>
+  </view>
+  <!-- 到底了 -->
+  <view class='last-d'>
+    -- 暂无评论 --
+  </view>
+</view>

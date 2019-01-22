@@ -1,0 +1,72 @@
+<form catchsubmit="formSubmit">
+  <view>
+    <view class="page__bd">
+      <view class="weui-search-bar">
+        <view class="weui-search-bar__form">
+
+          <view class="weui-search-bar__box">
+            <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+            <input type="text" class="weui-search-bar__input" placeholder="请输入搜索关键词" value="{{searchValue}}" name='input' focus="{{inputShowed}}" bindinput="inputTyping" />
+            <view class="weui-icon-clear" wx:if="{{searchValue.length > 0}}" bindtap="clearInput">
+              <icon type="clear" size="14"></icon>
+            </view>
+          </view>
+          <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+            <icon class="weui-icon-search" type="search" size="14"></icon>
+            <view class="weui-search-bar__text">请输入搜索关键词</view>
+          </label>
+        </view>
+
+        <button formType='submit' class='searchBtn'>搜索</button>
+      </view>
+    </view>
+  </view>
+</form>
+<!-- 历史搜索记录 -->
+<!-- <view class='historyS'>
+  <view> 历史搜索 </view>
+  <view bindtap='historyDelFn'>
+    <image src='../../images/del.png' class='delimg' mode='aspectFit'></image>
+  </view>
+</view> -->
+
+<!-- <view class='htrItemContent'>
+  <block wx:for="{{searchRecord}}" wx:key='{{item}}'>
+    <view class='htrItem'>{{item.value}}</view>
+  </block>
+  <view class='noHistoryItem' wx:if="{{searchRecord.length==0}}">你还没有搜索记录</view>
+</view> -->
+
+<view class='zanwu' wx:if='{{listArr.length == 0 }}'>
+  <image src='../../images/zanwu.png' mode="aspectFill"></image>
+  <view class='text-zw'>
+    暂无数据
+  </view>
+</view>
+
+<view class='all_sc' wx:else>
+  <block wx:if='{{listArr.length > 0 }}'>
+    <view class='shoucangBox' wx:for='{{listArr}}' wx:key='{{index}}' bindtap='navTodeail' data-id='{{item.id}}'>
+      <view class='shoucangImg'>
+        <image src='{{item.img_url}}'></image>
+      </view>
+      <view class='shoucangCon'>
+        <view class='content'>
+          {{item.title}}
+        </view>
+        <view class='ll'>
+          发布时间：{{item.inputtime}}
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='zanwu'>
+      <image src='../../images/zanwu.png' mode="aspectFill"></image>
+      <view class='text-zw'>
+        暂无数据
+      </view>
+    </view>
+  </block>
+
+</view>

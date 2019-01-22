@@ -1,0 +1,76 @@
+{
+  "pages": [
+    "pages/authorize/authorize",
+    "pages/index/index",
+    "pages/fltoupiao/fltoupiao",
+    "pages/baoming/baoming",
+    "pages/community/community",
+    "pages/my/my",
+    "pages/searchuser/searchuser",
+    "pages/shoucang/shoucang",
+    "pages/fxewm/fxewm",
+    "pages/dynamic/dynamic",
+    "pages/welfare/welfare",
+    "pages/logs/logs",
+    "pages/fankuiTj/fankuiTj",
+    "pages/fankui/fankui",
+    "pages/search/search",
+    "pages/hezuo/hezuo",
+    "pages/dailiren/dailiren",
+    "pages/wodeguanzhu/wodeguanzhu",
+    "pages/jmsq/jmsq",
+    "pages/zhanghao/zhanghao",
+    "pages/details/details",
+    "pages/commentB/commentB",
+    "pages/navigation/navigation",
+    "pages/fldetails/fldetails",
+    "pages/fxewmsq/fxewmsq",
+    "pages/login/login",
+    "pages/msg/msg",
+    "pages/fabudongtai/fabudongtai"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "佐田氏之声-让农业更简单",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-h.png"
+      },
+      {
+        "pagePath": "pages/community/community",
+        "text": "社区",
+        "iconPath": "images/shequ.png",
+        "selectedIconPath": "images/shequ-h.png"
+      },
+      {
+        "pagePath": "pages/dynamic/dynamic",
+        "text": "动态",
+        "iconPath": "images/dongtai.png",
+        "selectedIconPath": "images/dongtai.png"
+      },
+      {
+        "pagePath": "pages/welfare/welfare",
+        "text": "福利",
+        "iconPath": "images/fuli.png",
+        "selectedIconPath": "images/fuli-h.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my-h.png"
+      }
+    ],
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "selectedColor": "#101010"
+  }
+}

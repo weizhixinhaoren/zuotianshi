@@ -1,0 +1,16 @@
+<view class='page-box'>
+  <view class='fankui-title'>
+    请选择反馈内容
+  </view>
+
+  <view class='fk-ls' wx:for='{{fankuiList}}' wx:key="{{index}}" data-id='{{item.id}}' catchtap='fankui'>
+    <view class='fankuiList'>
+      <view class='l-title'>
+        {{item.name}}
+      </view>
+      <view class='r-icon'>
+        <image src='../../images/jtqq.png'></image>
+      </view>
+    </view>
+  </view>
+</view>

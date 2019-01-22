@@ -1,0 +1,38 @@
+<view class='zanwu' wx:if='{{list.length == 0}}'>
+  <image src='../../images/zanwu.png' mode="aspectFill"></image>
+  <view class='text-zw'>
+    暂无数据
+  </view>
+</view>
+<view class='all_sc'>
+  <view class='shoucangBox' wx:for='{{list}}' wx:key='{{index}}' bindtap='navTodetails' data-id = '{{item.id}}'>
+    <!-- 删除 -->
+    <!-- <view class='xz' data-index="{{index}}" data-name="{{item.id}}" bindtap='select'>
+      <image data-id='0' src="{{item.checked==true?'/images/xz.png':'/images/wxz.png'}}"></image>
+    </view> -->
+    <view class='shoucangImg'>
+      <image src='{{item.img_url}}'></image>
+    </view>
+    <view class='shoucangCon'>
+      <view class='content'>
+        {{item.title}}
+      </view>
+      <view class='ll'>
+        发布时间：{{item.inputtime}}
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+<!-- 删除 -->
+<!-- <view class='bj'>
+  <view bindtap='selectAll'>
+    <image data-statue="selectilall" src="{{selectilall?'/images/xz.png':'/images/wxz.png'}}"></image>
+    全选
+  </view>
+  <view bindtap='del'>
+    删除
+  </view>
+</view> -->

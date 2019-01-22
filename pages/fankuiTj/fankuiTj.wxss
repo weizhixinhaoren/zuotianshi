@@ -1,0 +1,69 @@
+@import "../../weui.wxss";
+@import "../../wxParse/wxParse.wxss";
+page{
+  background-color: #f1f0f5;
+}
+.title{
+  padding: 0 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color: #1c1c1c;
+  background-color:white;
+
+}
+.textarea-box{
+  background-color: white;
+  padding: 0 30rpx !important;
+}
+.textarea-box textarea{
+  font-size: 28rpx;
+  color: #969696;
+}
+.weui-cell{
+  padding:20rpx 0; 
+}
+.jietu{
+  padding: 0 30rpx; 
+  background-color: white
+}
+.weui-uploader__title{
+  font-size: 32rpx;
+  color: #1c1c1c;
+}
+.weui-uploader__info{
+  font-size: 28rpx;
+  color: #b8b8b8;
+}
+.lxfs{
+  font-size: 24rpx;
+  color: #969696;
+  text-align: center;
+  height: 70rpx;
+  line-height: 70rpx;
+  background-color: #f1f0f5;
+}
+.phone-lx{
+  padding: 20rpx 30rpx 0 30rpx;
+  overflow: hidden;
+  background-color: white;
+}
+.phone-name{
+  width: 160rpx;
+  font-size: 30rpx;
+  color: #1c1c1c;
+  float: left;
+}
+.phone-lx view:nth-child(2) {
+  width: 500rpx;
+  float: left;
+}
+.phone-number input{
+  display: inline-block;
+  font-size: 28rpx;
+  color: #b3b3b3;
+  line-height: 28rpx;
+}
+.weui-textarea-counter{
+  font-size:26rpx; 
+}

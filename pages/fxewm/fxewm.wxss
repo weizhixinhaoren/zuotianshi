@@ -1,0 +1,17 @@
+
+.img_ewm image{
+  width: 100%;
+  display: block
+}
+.img_ewm{
+  position: relative;
+}
+.img_ewm .hqewm{
+  display: block;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-left: -225rpx;
+  width: 450rpx;
+  height:  450rpx;
+}

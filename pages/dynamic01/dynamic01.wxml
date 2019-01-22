@@ -1,0 +1,90 @@
+<view class='form-box'>
+  <form catchsubmit="formSubmit">
+    <textarea class='textareaCon' placeholder='这一刻的想法...' name='xf'></textarea>
+    <view class='fangshi'>
+      <block wx:if='{{img_arr.length>=0 && chooesVideo.length ==0}}'>
+        <view bindtap="upimg">
+          <block wx:for="{{img_arr}}" wx:key="{{index}}">
+            <image src='{{item}}'></image>
+          </block>
+          <image src='../../images/xj.png'></image>
+          <view wx:if='{{img_arr.length==0}}'>
+            添加图片
+          </view>
+        </view>
+      </block>
+      <!--视频  -->
+      <block wx:if='{{chooesVideo.length>=0 && img_arr.length==0}}'>
+        <view wx:if='{{chooesVideo.length !== 0}}'>
+          <video src='{{chooesVideo}}' class='upVideo'></video>
+        </view>
+        <view bindtap='chooseVideo'>
+          <image src='../../images/sxj.png' wx:if='{{chooesVideo.length==0}}'></image>
+          <view wx:if='{{chooesVideo.length==0}}'>
+            添加视频
+          </view>
+        </view>
+      </block>
+
+
+
+    </view>
+
+    <!-- 选择位置 -->
+    <view class='nowaddress' bindtap="translate">
+      <view>
+        <image src='../../images/add.png'></image>
+        {{province}} {{city}} {{county}}
+      </view>
+      <view>
+        <image src='../../images/jtqq.png'></image>
+      </view>
+    </view>
+    <!-- 选择账号 -->
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class='nowaddress nowaddress02'>
+        <view>
+          选择账号 {{array[index]}}
+        </view>
+        <view>
+          <image src='../../images/jtqq.png'></image>
+        </view>
+      </view>
+    </picker>
+    <button class="weui-btn" type="" formType="submit">提交</button>
+  </form>
+</view>
+
+
+
+
+
+<!-- 省市级三级联动 -->
+<view class="animation-element-wrapper" animation="{{animation}}" style="visibility:{{show ? 'visible':'hidden'}}" bindtap="hiddenFloatView" data-id="444">
+  <view class="animation-element" catchtap="nono">
+    <text class="left-bt enh" catchtap="hiddenFloatView" data-id="555">取消</text>
+    <text class="right-bt enh" catchtap="hiddenFloatView" data-id="666">确定</text>
+    <view class="line"></view>
+
+    <picker-view indicator-style="height: 50rpx;" value="{{value}}" bindchange="bindChange" catchtap="nono">
+      <!--省-->
+      <picker-view-column>
+        <view wx:for="{{provinces}}" wx:for-item="sheng" wx:key="">
+          {{sheng.name}}
+        </view>
+      </picker-view-column>
+      <!--地级市-->
+      <picker-view-column>
+        <view wx:for="{{citys}}" wx:key="">
+          {{item.name}}
+        </view>
+      </picker-view-column>
+      <!--区县-->
+      <picker-view-column>
+        <view wx:for="{{countys}}" wx:key="">
+          {{item.name}}
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

@@ -1,0 +1,24 @@
+<view class='banner'>
+   <image src='{{banner}}'></image>
+</view>
+
+
+<view class='content'>
+   <image src='../../images/xushanchu.png' mode="widthFix"></image>
+</view>
+
+
+<!-- 联系我们 -->
+<view class='lxwm'>
+    <view>
+       微信客服：<text>1125115</text>
+    </view>
+    <view>
+       商务热线：<text>400-555-6666</text>
+    </view>
+</view>
+<!-- 立即申请 -->
+
+<view class='ljsq' bindtap='dlrsq'>
+    立即申请
+</view>

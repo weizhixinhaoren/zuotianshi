@@ -1,0 +1,85 @@
+<view class='baoBox'>
+  <form catchsubmit="formSubmit" catchreset="formReset">
+    <!-- 头像 -->
+    <view class="page__modules modules__shadow touxiangup">
+      <view class="page__bd">
+        <view class="weui-cellse">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <view class="weui-uploader">
+                <view class="weui-uploader__hd">
+                  <view class="weui-uploader__title">头像</view>
+                  <!-- <view class="weui-uploader__info">0</view> -->
+                </view>
+                <view class="weui-uploader__bd">
+                  <view class="weui-uploader__files" id="uploaderFiles">
+                    <block wx:for="{{chooseImg}}" wx:key="*this">
+                      <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                        <input name='files' value='{{files}}' hidden />
+                      </view>
+                    </block>
+                  </view>
+                  <block wx:if='{{chooseImg.length==0}}'>
+                    <view class="weui-uploader__input-box">
+                      <view class="weui-uploader__input" bindtap="chooseImage" name='bbb'></view>
+                    </view>
+                  </block>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view style='overflow:hidden'>
+      <view class='box_title'>
+        姓名：
+      </view>
+      <view class='box_upinput'>
+        <input type='text' name='name'> </input>
+      </view>
+
+
+      <view class='box_title'>
+        地址：
+      </view>
+      <view class='box_upinput'>
+        <input type='text' name='address'></input>
+      </view>
+
+
+      <view class='box_title'>
+        简介：
+      </view>
+      <view class='box_uptext'>
+        <textarea name='content'></textarea>
+      </view>
+
+
+      <view class='box_title'>
+        视频：
+      </view>
+      <view class='box_upVideo'>
+        <block wx:if='{{choodeVideo.length>0}}'>
+          <video src='{{choodeVideo}}' class='videoBox'></video>
+        </block>
+        <block wx:if='{{choodeVideo.length==0}}'>
+          <view class="weui-uploader__input-box">
+
+            <view class="weui-uploader__input" bindtap="chooseVideo" name='ccc'></view>
+
+          </view>
+        </block>
+      </view>
+    </view>
+
+
+    <view>
+      <button class='btn_submit' formType="submit">
+        提交报名
+      </button>
+    </view>
+
+  </form>
+</view>

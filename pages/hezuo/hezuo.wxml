@@ -1,0 +1,45 @@
+<view class='form-box'>
+  <form class='' catchsubmit="formSubmit" catchreset="formReset">
+    <view class='title'>
+      请填写以下信息
+    </view>
+    <view class='first01'>
+      <input type='text' name='name' placeholder='姓名：' bindinput='changesub'></input>
+      <!-- <input type='text' name='sex' placeholder='性别：'></input> -->
+     
+    </view>
+    <view class='sexBox'>
+       <radio-group bindchange="radioChange" style='font-size:28rpx;'>
+        <label>
+          <radio value="1"  />女士
+          <radio value="2"  />先生
+        </label>
+      </radio-group>  
+    </view>
+    <view class='first02'>
+      <input type='text' name='gongsi' placeholder='公司：'></input>
+    </view>
+    <view class='first02'>
+      <input type='text' name='lxfs' placeholder='联系方式：'></input>
+    </view>
+    <view class='first02'>
+      <textarea name='bz' placeholder='合作方式：'></textarea>
+    </view>
+    <view class='kth'>
+      <view>
+        感谢支持和信赖，我们将尽快与您联系
+      </view>
+      <view>
+        商务热线：
+        <text>400-000-0000</text>
+      </view>
+    </view>
+    <block wx:if='{{submithidden == false}}'>
+      <button formType="submit" class='submit' >提交</button>
+    </block>
+    <block wx:else>
+      <button formType="submit" class='submit1' >提交</button>
+    </block>
+  </form>
+
+</view>

@@ -1,0 +1,96 @@
+<view class='cont'>
+  <form catchsubmit="formSubmit">
+    <view class='col-h'>
+      <view class='sq-tit'>
+        头像：
+      </view>
+      <view class='sq-tx'>
+        
+        <block wx:if="{{imageSrc}}">
+          <image src='{{imageSrc}}'></image>
+        </block>
+
+        <block wx:else>
+          <view class="image-plus-text"  bindtap="chooseImage">
+            <image src='../../images/sq.png'></image>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class='col-h'>
+      <view class='sq-tit'>
+        名称：
+      </view>
+      <view class='sq-tx'>
+        <input type='text' placeholder='请输入账号名称' name='title' placeholder-style="color:#b2b2b2;"></input>
+      </view>
+    </view>
+    <view class='col-h'>
+      <view class='sq-tit'>
+        手机号：
+      </view>
+      <view class='sq-tx'>
+        <input type='text' name='tel' placeholder='请输入手机号码' placeholder-style="color:#b2b2b2;"></input>
+      </view>
+    </view>
+
+    <!-- 获取地理位置 -->
+    <!-- 选择位置 -->
+    <view class='nowaddress' bindtap="translate">
+      <view>
+        <image src='../../images/add.png'></image>
+        {{province}} {{city}} {{county}}
+      </view>
+      <view>
+        <image src='../../images/jtqq.png'></image>
+      </view>
+    </view>
+    <!-- 账号简介 -->
+    <view class='zhjj'>
+      <view>账号简介</view>
+      <textarea placeholder='请输入账号简介' name='cont' placeholder-style="color:#b2b2b2;"></textarea>
+    </view>
+    <!-- 客服电话 -->
+    <view class='col-h-tel'>
+      <view class='sq-tit'>
+        客服电话：
+      </view>
+      <view class='sq-tx'>
+        <input type='text' placeholder='请输入客服电话' name='pho' placeholder-style="color:#b2b2b2;"></input>
+      </view>
+    </view>
+    <!-- 创建 -->
+     <button class='tijiao' type="" formType="submit">提交</button>
+  </form>
+</view>
+
+
+<!-- 省市级三级联动 -->
+<view class="animation-element-wrapper pickvie" animation="{{animation}}" style="visibility:{{show ? 'visible':'hidden'}}" bindtap="hiddenFloatView" data-id="444">
+  <view class="animation-element" catchtap="nono">
+    <text class="left-bt enh" catchtap="hiddenFloatView" data-id="555">取消</text>
+    <text class="right-bt enh" catchtap="hiddenFloatView" data-id="666">确定</text>
+    <view class="line"></view>
+
+    <picker-view indicator-style="height: 50rpx;" value="{{value}}" bindchange="bindChange" catchtap="nono">
+      <!--省-->
+      <picker-view-column>
+        <view wx:for="{{provinces}}" wx:for-item="sheng" wx:key="">
+          {{sheng.name}}
+        </view>
+      </picker-view-column>
+      <!--地级市-->
+      <picker-view-column>
+        <view wx:for="{{citys}}" wx:key="">
+          {{item.name}}
+        </view>
+      </picker-view-column>
+      <!--区县-->
+      <picker-view-column>
+        <view wx:for="{{countys}}" wx:key="">
+          {{item.name}}
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

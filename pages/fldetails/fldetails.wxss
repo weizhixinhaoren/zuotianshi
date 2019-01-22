@@ -1,0 +1,11 @@
+@import "../../wxParse/wxParse.wxss";
+.baner{
+  width: 100%;
+}
+.baner image{
+  width: 100%;
+  display: block;
+}
+.contentBox{
+  padding:20rpx 32rpx;
+}

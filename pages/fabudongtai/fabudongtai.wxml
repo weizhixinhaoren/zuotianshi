@@ -1,0 +1,70 @@
+<view class='zanwu' wx:if='{{fabu1.length == 0}}'>
+  <image src='../../images/zanwu.png' mode="aspectFill"></image>
+  <view class='text-zw'>
+    暂无数据
+  </view>
+</view>
+
+<view class='gz-fabu-info ' wx:for='{{fabu1}}' wx:key='{{index}}'>
+  <view class='gz-fabu-info-box'>
+    <!-- 账号的头像 -->
+    <view class='info-img'>
+      <image src='{{item.sp_info.user_info.img_url}}'></image>
+      <view class='name_info'>
+        <text>{{item.sp_info.user_info.name}}</text>
+        <text>{{item.inputtime}}</text>
+      </view>
+    </view>
+    <!-- 发布的信息 -->
+    <view class='content-info'>
+      <view class='biaoti'>
+        {{item.sp_info.content}}
+      </view>
+      <!-- <block wx:for='{{item.sp_info.url}}'>
+          <image src='{{item.src}}' class='image-co'></image>
+      </block> -->
+
+      <block wx:if="{{item.sp_info.stu == 2}}" wx:for='{{item.sp_info.url}}' wx:key='{{index}}' wx:for-item="list">
+
+        <image src='{{list.src}}' class='image-co'></image>
+      </block>
+
+      <block wx:if="{{item.sp_info.stu == 1}}">
+        <video src='{{item.sp_info.url[0].src}}' class='videoBoxwid'></video>
+      </block>
+
+      <!-- 浏览量 点赞 评论 转发 -->
+      <view class='llcs'>
+        <view class='liulanliang'>
+          发布时间：{{item.sp_info.inputtime}}
+          <!-- <text bindtap='del' class='del'>删除</text> -->
+        </view>
+
+        <!--  -->
+      </view>
+      <!-- 多少人看过 -->
+      <view class='eyes'>
+        <view>
+          <image src='../../images/l.png'></image>
+          有{{item.sp_info.num}}人看过
+        </view>
+        <view>
+          <!-- <image src='../../images/jt.png'></image> -->
+        </view>
+      </view>
+      <!-- 评论list -->
+      <view class='plList' wx:if='{{item.comment.length>0}}'>
+        <view wx:for='{{item.comment}}' wx:key='{{index}}' wx:for-item='list'>
+          {{list.user_name}}：{{list.content}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<!-- 评论发送 -->
+<view class='communityBox' wx:if='{{hiddenPl}}'>
+  <input type='text' placeholder='请输入评论内容' bindblur='blur'></input>
+  <button class='btn_fs' bindtap='fs_contCom' data-id='{{plk_id}}'>发送</button>
+</view>

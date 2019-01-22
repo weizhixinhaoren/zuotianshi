@@ -1,0 +1,90 @@
+<view class='my-box'>
+  <!-- 个人信息 -->
+  <view class='set-background'>
+    <image class='background-image' src='../../images/my-bg.png'></image>
+    <view class='name-info' open-type="getUserInfo">
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='btn-xx'> 点击获取头像昵称 </button>
+      <block>
+        <image src='{{userInfo.avatarUrl}}'></image>
+        <view class='info-name'>{{userInfo.nickName}}</view>
+      </block>
+
+    </view>
+  </view>
+  <!-- 发布的动态  我的关注  收藏的视频 -->
+  <view class='dongtai-box'>
+    <view bindtap='fabudongtai'>
+      <view>{{dt_length}}</view>
+      <view>发布的动态</view>
+    </view>
+    <view bindtap='guanzhuTo'>
+      <view>{{gz_length}}</view>
+      <view>我的关注</view>
+    </view>
+    <view bindtap='shoucang'>
+      <view>{{sc_length}}</view>
+      <view>收藏的视频</view>
+    </view>
+    <view>
+      <view>{{mon}}</view>
+      <view>积分</view>
+    </view>
+  </view>
+
+
+
+
+
+  <!-- 我的账号 -->
+  <view class='my-zh' bindtap='sqzh'>
+    <view>
+      <image src='../../images/geren.png' class='icon-my'></image>
+      <view class='my-text'>
+        申请账号
+      </view>
+    </view>
+    <view>
+      <image src='../../images/jtqq.png' class='right-jt'></image>
+    </view>
+
+  </view>
+
+  <!-- 意见反馈  商务合作 成为代理人 -->
+  <view class='box-all-zu'>
+    <view class='all-box' catchtap='navTo'>
+      <view>
+        <image src='../../images/nj.png' class='icon-my' mode='widthFix'></image>
+        <view class='my-text'>
+          意见反馈
+        </view>
+      </view>
+      <view>
+        <image src='../../images/jtqq.png' class='right-jt' mode='widthFix'></image>
+      </view>
+    </view>
+    <view class='all-box' catchtap='navTo1'>
+      <view>
+        <image src='../../images/wx.png' class='icon-my' mode='widthFix'></image>
+        <view class='my-text'>
+          商务合作
+        </view>
+      </view>
+      <view>
+        <image src='../../images/jtqq.png' class='right-jt'></image>
+      </view>
+    </view>
+    <view class='all-box' catchtap='navTo2'>
+      <view>
+        <image src='../../images/xd.png' class='icon-my'></image>
+        <view class='my-text'>
+          申请成为代理人
+        </view>
+      </view>
+      <view>
+        <image src='../../images/jtqq.png' class='right-jt'></image>
+      </view>
+    </view>
+
+
+  </view>
+</view>

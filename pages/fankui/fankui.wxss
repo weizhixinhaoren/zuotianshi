@@ -1,0 +1,34 @@
+.page-box{
+  background-color: #f1f0f5;
+  height: 100vh;
+ 
+}
+.fankui-title{
+  font-size: 24rpx;
+  color: #989898;
+   height: 70rpx;
+  line-height: 70rpx;
+  padding: 0 32rpx;
+}
+.fankuiList{
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80rpx;
+  margin-left: 32rpx;
+  border-bottom:1px solid  #f1f0f5
+}
+.fk-ls{
+  background-color: white;
+}
+.l-title{
+  font-size: 28rpx;
+  color: #1c1c1c;
+}
+.r-icon image{
+  width: 40rpx;
+  height: 40rpx;
+  
+  margin-right: 32rpx;
+}

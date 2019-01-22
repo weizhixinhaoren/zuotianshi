@@ -1,0 +1,150 @@
+<!--index.wxml-->
+<!-- 搜索框 -->
+<view class='boxSearch'>
+  <input type="text" class="indexSearch" disabled placeholder="请输入搜索关键词" bindtap='searchTo' />
+</view>
+
+<!-- 搜索框结束 -->
+<!-- 轮播图 -->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicatorColor='{{indicatorColor}}' indicator-active-color='{{indicatorActiveColor}}' circular='{{circular}}' class='boxBanner'>
+  <block wx:for="{{imgUrls}}" wx:key='{{index}}'>
+    <swiper-item>
+      <image src="{{item.b_photo}}"  class='banner' />
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 轮播图 end -->
+
+<!-- 栏目数据 -->
+<view class='navListAll'>
+  <block wx:for="{{navList}}" wx:key="{{index}}" data-id="{{item.id}}">
+    <view class='boxnav'>
+      <navigator url='../navigation/navigation?id={{item.id}}' hover-class="none">
+        <image src='{{item.img_url}}'></image>
+        <text class='navTitle'>{{item.title}}</text>
+      </navigator>
+    </view>
+  </block>
+</view>
+<!-- 栏目数据 结束 -->
+<!-- 最近浏览 -->
+<!-- <view class='recent hide'>
+  <view class='recentMUkuai'>
+    <view>
+      <image src='../../images/left-h.png'></image>
+      您最近浏览的
+    </view>
+    <view>
+    </view>
+  </view>
+  <scroll-view scroll-x class='boxSbll' style="width: 100%">
+    <block wx:for='{{recent}}' wx:key="{{index}}">
+      <view class='recentList'>
+        <image src='{{item.images}}'></image>
+        <view class='view_list'>{{item.name}}</view>
+      </view>
+    </block>
+  </scroll-view>
+</view> -->
+<!--最近浏览结束  -->
+<!-- 热门推荐 -->
+<view class='popular'>
+  <view class='recentMUkuai'>
+    <view>
+      <image src='../../images/left-h.png'></image>
+      热门推荐
+    </view>
+    <view></view>
+  </view>
+  <!-- 热门推荐list -->
+  <scroll-view scroll-x class='hotTuijian' style='width:100%'>
+    <block wx:for='{{hotBoxlist}}' wx:key='{{index}}'>
+      <view class='hotBoxlist' bindtap='navTobe' data-id='{{item.id}}'>
+        <image src="{{item.img_url}}" class='hot_video'>
+        </image>
+        <view class='hotBoxlist_videolist'>
+          <view>{{item.title}}</view>
+          <view> {{item.inputtime}}更新</view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+<!-- 为您精选的知识视频 -->
+<view class='video_jingxuan'>
+  <view class='recentMUkuai'>
+    <view>
+      <image src='../../images/left-h.png'></image>
+      为您精选的知识视频
+    </view>
+    <view></view>
+  </view>
+</view>
+<view class='jingxuanspBox' wx:for='{{jingxuanvideo}}' wx:key="{{index}}">
+  <!-- <video src='{{item.url}}' class='jxshipin'></video>
+     -->
+  <view class='jxshipin' catchtap='details' data-id="{{item.id}}">
+    <image src='{{item.img_url}}'></image>
+    <!-- <view class='time-sc'>
+           02：36
+        </view> -->
+    <!-- 播放按钮 -->
+    <view class='bfan'>
+      <image src='../../images/bf.png'></image>
+    </view>
+  </view>
+  <view class='jingxuanTit'>{{item.title}}</view>
+  <view class='faburen'>
+    <view class='fabuimg'>
+      <view>
+        <image src='{{item.lm_info.img_url}}'></image>
+      </view>
+
+      <view class='fbinfo'>
+        <text class='fbid'>{{item.lm_info.title}}</text>
+        <text class='fbsj'>{{item.inputtime}}/更新</text>
+      </view>
+    </view>
+    <view class='gongnengZan'>
+     
+      <view bindtap='update_zan' data-index='{{index}}' id='{{item.id}}'>
+        <image src='../../images/zan-h.png'  wx:if="{{item.stu.dz==1}}" ></image>
+        <image src='../../images/zan.png'   wx:else ></image>
+        <!-- <image src='../../images/zan.png'   wx:if='{{hiddenImg}}'></image>
+        <image src='../../images/zan.png'   wx:else></image> -->
+    
+        <view>点赞</view>
+      </view>
+
+
+      <view bindtap='inshouc' id='{{item.id}}' data-index='{{index}}'>
+        <block wx:if='{{item.stu.sc == 1}}'>
+           <image src='../../images/shou-h.png'></image>
+        </block>
+        <block wx:if='{{item.stu.sc == 0}}'>
+           <image src='../../images/shou.png'></image>
+        </block>
+        
+        <view>收藏</view>
+      </view>
+
+
+      <view bindtap='comPl' id='{{item.id}}'>
+        <image src='../../images/pl.png'></image>
+        <view>评论</view>
+      </view>
+
+
+      <view bindtap='fenxiang' id='{{item.id}}'>
+        <image src='../../images/zf.png'></image>
+        <view>分享</view>
+      </view>
+
+
+    </view>
+  </view>
+</view>
+
+
+<!-- 为您精选的知识视频结束 -->

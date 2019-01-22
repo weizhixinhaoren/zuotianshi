@@ -1,0 +1,36 @@
+@import "../../weui.wxss";
+.baoBox{
+  padding: 0 32rpx;
+  font-size: 32rpx;
+}
+.weui-cell{
+  padding: 0 0;
+}
+.box_title{
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.box_upinput{
+  width: 100%;
+  border:1px solid #ccc;
+  height: 70rpx;
+  line-height: 70rpx;
+  box-sizing:border-box;
+
+}
+.box_uptext{
+   border:1px solid #ccc;
+}
+.videoBox{
+  width: 100%;
+  height: 300rpx;
+}
+.btn_submit{
+  width: 100%;
+  background-color: red;
+  color: white;
+  margin: 40rpx 0;
+}
+button::after{
+  display: none
+}

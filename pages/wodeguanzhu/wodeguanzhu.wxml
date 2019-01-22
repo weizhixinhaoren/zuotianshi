@@ -1,0 +1,23 @@
+<view class='zanwu' wx:if='{{list.length == 0}}'>
+  <image src='../../images/zanwu.png' mode="aspectFill"></image>
+  <view class='text-zw'>
+    暂无数据
+  </view>
+</view>
+<view class='list' wx:for='{{infoList}}' wx:key='*this'>
+   <view class='touxiang'>
+      <image src='{{item.img_url}}'></image>
+   </view>
+   <view class='content'>
+      <view>
+          {{item.name}}
+      </view>
+      <view>
+         {{item.content}}    
+      </view>
+   </view>
+
+   <view class='quxiao' bindtap='qxgz' data-id='{{item.id}}'>
+      取消关注
+   </view>
+</view>

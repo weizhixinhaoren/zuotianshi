@@ -1,0 +1,4 @@
+<view class='img_ewm'>
+   <image src='../../images/ewm.jpg' mode='widthFix' style='height:{{height}}px'></image>
+   <image src='{{ewm}}'  mode='widthFix' class='hqewm'></image>
+</view>

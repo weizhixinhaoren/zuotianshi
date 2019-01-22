@@ -1,0 +1,64 @@
+/* pages/dynamic/dynamic.wxss */
+
+.form-box {
+  border-top: 1px solid #f4f4f4;
+}
+
+.textareaCon {
+  width: 686rpx;
+  padding: 32rpx;
+  font-size: 24rpx;
+  color: #6b6b6b;
+  min-height: 200rpx;
+}
+
+.fangshi {
+  padding: 0 32rpx;
+  padding-bottom: 26rpx;
+  display: flex;
+}
+
+
+.fangshi view image {
+  width: 116rpx;
+  height: 120rpx;
+  margin: 0 10rpx;
+}
+
+.fangshi view view {
+  text-align: center;
+  font-size: 22rpx;
+  color: #1c1c1c;
+}
+.nowaddress02{
+  margin-bottom: 150rpx;
+}
+.nowaddress {
+  padding: 0 32rpx;
+  border: 18rpx solid #f8f8f8;
+  border-left: none;
+  border-right: none;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+/**index.wxss**/
+.weui-btn{
+  position: fixed;
+}
+page {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.infoText {
+  margin-top: 20rpx;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+}
+.upVideo{
+  width:680rpx;
+}
+

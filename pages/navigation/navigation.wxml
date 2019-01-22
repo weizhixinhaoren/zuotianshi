@@ -1,0 +1,64 @@
+<view class='imgBox'>
+  <image src='{{fmUrl}}' mode='widthFix'></image>
+  <view class='time-sc' >
+    共{{numAll}}个视频
+  </view>
+
+</view>
+
+<view class='jingxuanspBox'  wx:for='{{videoList}}' wx:key="{{index}}"  data-id='{{item.id}}'>
+  <view class='jxshipin' catchtap='navTo' id='{{item.id}}'>
+    <image src='{{item.img_url}}' mode='widthFix'></image>
+    <!-- <view class='time-sc'>
+      02：36
+    </view> -->
+    <!-- 播放按钮 -->
+    <view class='bfan'>
+      <image src='../../images/bf.png'></image>
+    </view>
+  </view>
+  <view class='jingxuanTit'>{{item.title}}</view>
+  <view class='frenBox'>
+     <view class='fbuImg'>
+        <image src='{{item.lm_info.img_url}}'></image>
+        <view class='fbuname'>
+            <view>{{item.lm_info.title}}</view>
+            <view>{{item.inputtime}}更新</view>
+        </view>
+     </view>
+     <view class='gzo'>
+        <!-- <view>+关注</view> -->
+     </view>
+  </view>
+  <view class='jh'>
+      <!-- <view>
+        <image src='../../images/zan.png'></image>
+        点赞
+      </view> -->
+
+      <view bindtap='update_zan' data-index='{{index}}' id='{{item.id}}'>
+        <image src='../../images/zan-h.png'  wx:if="{{item.stu.dz==1}}"></image>
+        <image src='../../images/zan.png'  wx:else></image>
+        <view>点赞</view>
+      </view>
+       <view bindtap='inshouc' id='{{item.id}}' data-index='{{index}}'>
+        <block wx:if='{{item.stu.sc == 1}}'>
+           <image src='../../images/shou-h.png'></image>
+        </block>
+        <block wx:if='{{item.stu.sc == 0}}'>
+           <image src='../../images/shou.png'></image>
+        </block>
+        <view>收藏</view>
+      </view>
+      <view bindtap='comPl' id='{{item.id}}'>
+        <image src='../../images/pl.png'></image>
+        <view>评论</view>
+      </view>
+      <view bindtap='fenxiang' id='{{item.id}}'>
+        <image src='../../images/zf.png'></image>
+        <view>分享</view>
+      </view>
+
+    </view>
+</view>
+

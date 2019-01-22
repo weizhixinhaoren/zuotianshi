@@ -1,0 +1,31 @@
+<view class='topBanner'>
+  <image src='{{listImg}}' ></image>
+</view>
+
+<view class='piaoBox'>
+  <view class='fis_a'>
+    {{title}}
+  </view>
+  <view class='sec_b'>
+    结束时间：{{stop_time}}
+  </view>
+</view>
+
+
+<view class='tp_box_all'>
+  <view class='boxTo'>
+    <view wx:for='{{list_ren}}' wx:key='{{index}}'>
+      <image src='{{item.img_url}}'></image>
+      <view>
+        {{item.id}}号 {{item.title}}
+
+      </view>
+      <view class='sum'>
+        共{{item.sum}}票
+      </view>
+      <view class='tpBtn' bindtap='toupiao' data-id='{{item.id}}'>
+        投一票
+      </view>
+    </view>
+  </view>
+</view>
